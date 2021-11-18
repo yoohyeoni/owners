@@ -12,7 +12,7 @@ class Ownersview(View):
         owners = Owner.objects.all()
         results  = []
         for owner in owners:
-            ha = owner.dog_set.all() #하에다가 주인의 강아지목록을 다가져옴
+            ha = owner.dog_set.all() 
             dog_list = []
             for dog in ha:
                 dog_list.append({
@@ -29,9 +29,7 @@ class Ownersview(View):
                 }
             )
 
-    ###
-    # 오너아아디 > 
-    # 도그스 fk = 오너아이디
+  
         
         return JsonResponse({"Result" : results}, status=200)
 
